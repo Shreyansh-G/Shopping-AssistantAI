@@ -1,22 +1,21 @@
-# 🛒 WalmartGenie – Your AI Shopping Companion
+# 🍚 WalmartGenie – Your AI Shopping Companion
 
 [![Demo Video](https://img.youtube.com/vi/TFmY_R624Ew/0.jpg)](https://www.youtube.com/watch?v=TFmY_R624Ew)
 
+WalmartGenie is an **AI-powered shopping assistant** that helps users instantly discover **hidden gems**, trending picks, best deals, and virtually try on fashion items — all in seconds.
 
-WalmartGenie is an **AI-powered shopping assistant** that helps users instantly discover **hidden gems**, trending picks, best deals, and try on fashion items virtually — all within seconds.
-
-Built for the **Walmart Sparkathon**, WalmartGenie transforms the Walmart shopping experience with smart recommendations and intuitive browsing.
+Built for the **Walmart Sparkathon 2025**, WalmartGenie transforms the Walmart shopping experience with smart recommendations, real-time product discovery, and a modern shopping UI.
 
 ---
 
 ## 🚨 The Problem
 
-Millions of quality products on Walmart go undiscovered due to poor visibility:
+Millions of high-quality Walmart products go undiscovered due to poor visibility:
 
-- 🧭 50% of users don’t go past page 2.
-- 📉 60% of great products go unsold.
-- 💔 35% of online sellers fail within 120 days.
-- 💸 Discovery issues cost retailers **>$369B/year**.
+* 🛍️ 50% of users don’t browse past page 2
+* 📉 60% of great products go unsold
+* 💔 35% of online sellers fail within 120 days
+* 💸 Discovery issues cost retailers **>\$369B/year**
 
 ---
 
@@ -24,187 +23,216 @@ Millions of quality products on Walmart go undiscovered due to poor visibility:
 
 A blazing-fast AI shopping assistant that understands natural language queries like:
 
-> “Running shoes under $100 for flat feet”
+> “Running shoes under \$100 for flat feet”
 
-It delivers laser-targeted suggestions powered by OpenAI + curated product data.
+It delivers laser-targeted suggestions powered by OpenAI and Walmart product data.
+
+---
 
 ### 🔍 Key Features
 
-| Feature             | Description                                                                 |
-|---------------------|-----------------------------------------------------------------------------|
-| 💎 Hidden Gems       | High-rated, low-visibility items (Core innovation)                          |
-| 📈 Trending Picks    | Items gaining traction via real-time trend signals                         |
-| 💰 Value Deals       | Top 8 products with the **steepest discounts**                              |
-| 👗 Virtual Try-On    | AR previews for fashion & beauty items (via Gemini Vision + Expo)          |
-| 🤖 Smart Alternatives| AI-suggested swaps with similar ratings, categories, and budgets            |
+| Feature               | Description                                                    |
+| --------------------- | -------------------------------------------------------------- |
+| 💎 Hidden Gems        | High-rated, low-visibility items (core innovation)             |
+| 📈 Trending Picks     | Products gaining traction based on real-time shopping trends   |
+| 💰 Value Deals        | Top 8 items with the steepest discounts                        |
+| 👗 Virtual Try-On     | AR previews for clothing using Gemini Vision + Expo            |
+| 🤖 Smart Alternatives | AI-suggested product swaps in the same price range or category |
 
 ---
 
 ## ⚙️ Tech Stack
 
-- **Frontend:** React Native + Gifted Chat UI
-- **Backend:** Node.js, Express.js, MongoDB, Firebase
-- **AI/NLP:** OpenAI GPT API for conversation and understanding
-- **Data Layer:** Firebase + JSON product model with discount %, rating, flags
-- **AR Experience:** Expo + AR + Gemini Vision APIs (Virtual Try-On)
+* **Frontend**: React Native + Gifted Chat UI
+* **Backend**: Node.js, Express.js, MongoDB, Firebase
+* **AI/NLP**: OpenAI GPT API, Google Gemini API
+* **AR Try-On**: Expo + Google Gemini Vision
+* **Data Layer**: Firebase + Walmart product JSON
+* **Styling**: NativeWind (Tailwind for React Native)
+* **Navigation**: React Navigation
 
 ---
 
-## 📊 Impact
+## 📊 Impact (Projected)
 
-| Metric                    | Result                          |
-|---------------------------|----------------------------------|
-| 🛍️ Conversion Lift         | +23% (Glassix, 2024)             |
-| 🔁 Repeat Visits           | +61% (Forrester, 2023)           |
-| ⏱️ Faster Purchase Time    | 30% reduction in decision time   |
+| Metric              | Result                     |
+| ------------------- | -------------------------- |
+| 🛍️ Conversion Lift | +23% (Glassix, 2024)       |
+| 🔁 Repeat Visits    | +61% (Forrester, 2023)     |
+| ⏱️ Purchase Speed   | 30% faster decision-making |
 
-WalmartGenie doesn’t just save time—it **rescues great products from being ignored**.
+WalmartGenie replaces slow browsing with instant, intelligent discovery.
 
 ---
 
-## Setup Instructions
+## 📆 Project Structure
+
+```
+drippy/
+├── components/
+│   └── WalmartChatbot.tsx          # AI chatbot component
+├── screens/
+│   ├── HaulScreen.tsx              # Main shopping screen
+│   ├── ProductDetailScreen.tsx     # Product details
+│   ├── TryingRoomScreen.tsx        # AR try-on experience
+│   └── WardrobeScreen.tsx          # Saved/personalized items
+├── utils/
+│   ├── walmartDataSource.ts        # Handles Walmart product data
+│   └── dataSource.ts               # Legacy data support
+├── navigation/
+│   └── index.tsx                   # App routing
+└── assets/
+    └── dataset/
+        └── walmart-products.csv    # Product data file
+```
+
+---
+
+## ⚙️ Setup Instructions
 
 ### 1. Install Dependencies
+
 ```bash
 npm install
 ```
 
+---
+
 ### 2. Environment Configuration
+
 Create a `.env` file in the root directory:
-```
+
+```env
 FIREBASE_API_KEY=
 OPENAI_API_KEY=
 GOOGLE_CLOUD_API_KEY=
 ```
 
-Get  Gemini API key:
-1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Create a new API key
-3. Add it to your `.env` file
+#### 🔑 How to Get API Keys
 
-Get OpenAI API Key
-1.Go to OpenAI API Dashboard
-2.Click "Create new secret key"
-3.Copy and paste it into the OPENAI_API_KEY field in your .env
+* **Gemini (Google AI) API Key**
 
-Get Firebase API Key
-1.Go to Firebase Console
-2.Create a new project (or select an existing one)
-3.Click Project Settings > General
-4.Under "Your apps", register your app and find your Firebase config
-5.Copy the apiKey field and paste it into FIREBASE_API_KEY in your .env
+  1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
+  2. Click **"Get API Key"**
+  3. Paste it into `GOOGLE_CLOUD_API_KEY`
 
-Note:⚠️ Don’t forget to enable Firestore and configure basic security rules.
+* **OpenAI API Key**
+
+  1. Go to [OpenAI API Dashboard](https://platform.openai.com/account/api-keys)
+  2. Click **"Create new secret key"**
+  3. Paste it into `OPENAI_API_KEY`
+
+* **Firebase API Key**
+
+  1. Go to [Firebase Console](https://console.firebase.google.com/)
+  2. Create/select a project → Project Settings → General
+  3. Under **"Your apps"**, find your `apiKey`
+  4. Paste into `FIREBASE_API_KEY`
+
+> ⚠️ **Don’t forget:** Enable Firestore and configure basic security rules!
+
+---
+
 ### 3. Run the Application
+
+Start the development server:
+
 ```bash
 npm start
 ```
 
 Then press:
-- `a` for Android
-- `i` for iOS
-- `w` for web
 
-## Project Structure
+* `a` → Launch on Android
+* `i` → Launch on iOS (macOS only)
+* `w` → Open in Web browser
 
-```
-drippy/
-├── components/
-│   └── WalmartChatbot.tsx      # AI chatbot component
-├── screens/
-│   ├── HaulScreen.tsx          # Main shopping screen
-│   ├── ProductDetailScreen.tsx  # Product details
-│   ├── TryingRoomScreen.tsx    # AR try-on feature
-│   └── WardrobeScreen.tsx      # Saved items
-├── utils/
-│   ├── walmartDataSource.ts    # Walmart data handling
-│   └── dataSource.ts          # Legacy data source
-├── navigation/
-│   └── index.tsx              # App navigation
-└── assets/
-    └── dataset/
-        └── walmart-products.csv # Walmart product dataset
-```
+> 📱 **Tip:** Use [Expo Go](https://expo.dev/client) on your phone to scan the QR code and preview instantly.
 
 ---
 
-## Key Technologies
+## 🌟 Unique Selling Points
 
-- **React Native**: Cross-platform mobile development
-- **Expo**: Development platform and tools
-- **Google Gemini AI**: Advanced AI chatbot
-- **TypeScript**: Type-safe development
-- **NativeWind**: Tailwind CSS for React Native
-- **React Navigation**: Navigation framework
+* **Real-time Shopping Assistant**: Get instant product suggestions via AI
+* **AR Try-On**: Try clothes virtually before buying
+* **Smart Discovery**: No more endless scrolling — get to the best picks fast
+* **Integrated Chatbot UI**: Floating, interactive assistant powered by Gemini
 
 ---
 
-## 📬 Features
-
+## 📩 Features Summary
 
 ### 🛍️ Shopping Experience
-- **Walmart Product Integration**: Full integration with Walmart product dataset
-- **Modern UI**: Clean, modern interface with shopping-focused design
-- **Product Discovery**: Browse products by categories, tags, and search
-- **Featured Products**: Curated collections of top-rated and discounted items
-- **Product Details**: Comprehensive product information with size/color selection
+
+* Full integration with Walmart product data
+* Modern UI with intuitive categories and filters
+* Featured collections and trending sections
+* Rich product detail pages with options
 
 ### 🤖 AI Chatbot Assistant
-- **Gemini AI Powered**: Advanced conversational AI using Google's Gemini API
-- **Product Recommendations**: Smart product suggestions based on user queries
-- **Shopping Assistance**: Help with product searches, deals, and category browsing
-- **Floating Interface**: Easy-to-access chatbot button on home screen
-- **Real-time Responses**: Instant AI-powered responses with product cards
 
-### 🎯 Unique Selling Points
-- **Virtual Try-On**: AR-powered trying room for clothing items
-- **Personalized Wardrobe**: Save and organize favorite items
-- **Smart Recommendations**: AI-driven product suggestions
-- **Modern Shopping Experience**: Seamless integration of AI and e-commerce
+* Gemini AI–powered smart chat
+* Understands product, budget, occasion-based queries
+* Offers product cards with direct interactions
+* Floating assistant UI with real-time suggestions
 
----
+### 👗 Virtual Try-On
 
-
-
-## 🤝 Contributing
-
-We welcome contributions from developers, designers, and data enthusiasts!
-
-To contribute:
-
-1. Fork the repo
-2. Create a new branch: `git checkout -b feature-name`
-3. Make your changes and commit: `git commit -m "Add feature"`
-4. Push to the branch: `git push origin feature-name`
-5. Create a pull request!
+* Real-time AR fitting room for fashion items
+* Personalized try-before-you-buy experience
 
 ---
 
 ## 👥 Contributors
 
-| Name              
-|-------------------
-| [Jatin Narayan]
-| [Shreyansh Gupta]
-| [Shashank Panday]
-| [Satyendra Singh]
+| Name            
+| --------------- 
+| Jatin Narayan   
+| Shreyansh Gupta 
+| Shashank Panday 
+| Satyendra Singh 
 
 ---
 
 ## 🏁 Built for Walmart Sparkathon 2025
 
-This project was submitted to the **Walmart Sparkathon** — reimagining how shoppers discover products at scale.
+This project was submitted to the **Walmart Sparkathon 2025**, a challenge to reimagine how Walmart customers discover and shop smarter.
 
 ---
 
-## 📽️ Watch the Demo
+## 🎥 Watch the Demo
 
-Click the thumbnail above or [watch on YouTube]([https://www.youtube.com/watch?v=TFmY_R624Ew])
+Click below to watch the full walkthrough:
 
+[![Demo Video](https://img.youtube.com/vi/TFmY_R624Ew/0.jpg)](https://www.youtube.com/watch?v=TFmY_R624Ew)
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions from developers, designers, and data enthusiasts!
+
+### Steps to Contribute:
+
+1. Fork the repo
+2. Create a new branch:
+
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+
+   ```bash
+   git commit -m "Add feature"
+   ```
+4. Push the branch:
+
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a Pull Request 🚀
+
+
+---
 
 > 🚀 WalmartGenie turns slow, overwhelming browsing into instant discovery—unlocking massive value for shoppers and sellers alike.
-
-
-
-
-
